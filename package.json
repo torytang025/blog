@@ -1,0 +1,43 @@
+{
+  "name": "tory-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbo",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@sanity/code-input": "^4.1.2",
+    "@sanity/image-url": "1",
+    "@sanity/vision": "3",
+    "next": "14.0.4",
+    "next-sanity": "7",
+    "react": "^18",
+    "react-dom": "^18",
+    "sanity": "3",
+    "sanity-plugin-media": "^2.2.4",
+    "styled-components": "6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "prettier": "^3.1.1",
+    "prettier-plugin-packagejson": "^2.4.9",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
