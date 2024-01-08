@@ -14,6 +14,7 @@
     ]
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.11",
     "@sanity/code-input": "^4.1.2",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
@@ -21,11 +22,14 @@
     "next-sanity": "7",
     "react": "^18",
     "react-dom": "^18",
+    "react-wrap-balancer": "^1.1.0",
     "sanity": "3",
     "sanity-plugin-media": "^2.2.4",
-    "styled-components": "6"
+    "styled-components": "6",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

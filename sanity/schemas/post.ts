@@ -1,4 +1,35 @@
 import { defineField, defineType } from "sanity";
+import { z } from "zod";
+
+const Post = z.object({
+  _id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  mainImage: z.object({
+    _ref: z.string(),
+    asset: z.object({
+      url: z.string(),
+      lqip: z.string().optional(),
+      dominant: z
+        .object({
+          background: z.string(),
+          foreground: z.string(),
+        })
+        .optional(),
+    }),
+  }),
+  publishedAt: z.string(),
+  description: z.string(),
+  categories: z.array(z.string()).optional(),
+  body: z.any(),
+  readingTime: z.number(),
+  mood: z.enum(["happy", "sad", "neutral"]),
+});
+export type Post = z.infer<typeof Post>;
+export type PostDetail = Post & {
+  headings: any[];
+  related?: Post[];
+};
 
 export default defineType({
   name: "post",
