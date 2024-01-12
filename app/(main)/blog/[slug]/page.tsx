@@ -1,8 +1,8 @@
-import { PostPortableText } from "@/components/portable-text/post-portable-text";
 import { getBlogPost } from "@/sanity/queries/post";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
+import { PostPortableText } from "../components/portable-text/post-portable-text";
 
 export const generateMetadata = async ({
   params,

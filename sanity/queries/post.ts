@@ -11,6 +11,7 @@ const getBlogPostQuery = groq`
     "categories": categories[]->title,
     description,
     publishedAt,
+    createdAt,
     readingTime,
     mood,
     body[] {

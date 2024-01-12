@@ -19,6 +19,7 @@ const Post = z.object({
     }),
   }),
   publishedAt: z.string(),
+  createdAt: z.string(),
   description: z.string(),
   categories: z.array(z.string()).optional(),
   body: z.any(),

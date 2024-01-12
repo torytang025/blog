@@ -1,3 +1,9 @@
+import PostList from "./blog/components/post-list";
+
 export default function IndexPage() {
-  return <h1>Hello, Home page!</h1>;
+  return (
+    <>
+      <PostList />
+    </>
+  );
 }
