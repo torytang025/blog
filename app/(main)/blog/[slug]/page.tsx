@@ -1,8 +1,9 @@
+import { Container } from "@/components/container";
 import { getBlogPost } from "@/sanity/queries/post";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
-import { PostPortableText } from "../components/portable-text/post-portable-text";
+import { PostPortableText } from "../../components/portable-text/post-portable-text";
 
 export const generateMetadata = async ({
   params,
@@ -99,16 +100,18 @@ export default async function BlogPage({
     //   // relatedViews={relatedViews}
     //   // reactions={reactions.length > 0 ? reactions : undefined}
     // />
-    <article className="prose dark:prose-invert">
-      <header>
-        <h1>
-          <Balancer>{post.title}</Balancer>
-        </h1>
-      </header>
-      <section>
-        <PostPortableText value={post.body} />
-      </section>
-    </article>
+    <Container className="mt-24">
+      <article className="prose dark:prose-invert">
+        <header>
+          <h1>
+            <Balancer>{post.title}</Balancer>
+          </h1>
+        </header>
+        <section>
+          <PostPortableText value={post.body} />
+        </section>
+      </article>
+    </Container>
   );
 }
 

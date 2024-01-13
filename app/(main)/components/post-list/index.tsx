@@ -1,9 +1,11 @@
 import { getLatestBlogPosts } from "@/sanity/queries/post-list";
 import { Post } from "@/sanity/schemas/post";
+import { cn } from "@/utils/cn";
 import dayjs from "dayjs";
 import Link from "next/link";
 
-async function PostList() {
+async function PostList(props: { className?: string }) {
+  const { className } = props;
   const posts: Post[] =
     (await getLatestBlogPosts({
       limit: 10,
@@ -28,10 +30,10 @@ async function PostList() {
 
   // Render the sorted posts by year
   return (
-    <div>
+    <div className={cn(className)}>
       {Object.entries(postsByYear).map(([year, posts]) => (
         <div key={year}>
-          <h2 className="mb-4 text-4xl font-bold">{year}</h2>
+          <h2 className="mb-2 text-3xl font-bold">{year}</h2>
           <ul>
             {posts.map((post) => (
               <PostItem key={post.slug} post={post} />
