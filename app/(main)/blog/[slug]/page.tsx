@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { getBlogPost } from "@/sanity/queries/post";
 
 import { PostPortableText } from "../../components/portable-text/post-portable-text";
+import { BlogPostTableOfContents } from "../../components/table-of-content";
 
 export const generateMetadata = async ({
   params,
@@ -103,6 +104,11 @@ export default async function BlogPage({
     //   // reactions={reactions.length > 0 ? reactions : undefined}
     // />
     <Container className="mt-24">
+      <aside className="hidden w-[160px] shrink-0 lg:block">
+        <div className="sticky top-2 pt-20">
+          <BlogPostTableOfContents headings={post.headings} />
+        </div>
+      </aside>
       <article className="prose dark:prose-invert">
         <header>
           <h1>

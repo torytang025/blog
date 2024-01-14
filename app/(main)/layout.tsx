@@ -1,5 +1,7 @@
 import GridBackground from "@/components/ui/gird-background";
 
+import Header from "./components/header";
+
 export default function IndexLayout({
   children,
 }: {
@@ -7,6 +9,7 @@ export default function IndexLayout({
 }) {
   return (
     <>
+      <Header />
       <GridBackground />
       <div className="fixed inset-0 -z-40 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
