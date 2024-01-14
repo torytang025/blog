@@ -99,13 +99,17 @@ export default function Header() {
           >
             <div className="relative flex gap-4">
               {!isHomePage ? <Avatar /> : <div />}
-              <div className="flex flex-1 justify-end md:justify-center">
-                <NavigationBarMobile className="pointer-events-auto relative z-50 md:hidden" />
-                <NavigationBarDesktop className="pointer-events-auto relative z-50 hidden md:block" />
-              </div>
               <motion.div
+                className="flex flex-1 justify-end md:justify-center"
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
+              >
+                <NavigationBarMobile className="pointer-events-auto relative z-50 md:hidden" />
+                <NavigationBarDesktop className="pointer-events-auto relative z-50 hidden md:block" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
               >
                 <div className="pointer-events-auto">
                   <ThemeSwitcher />

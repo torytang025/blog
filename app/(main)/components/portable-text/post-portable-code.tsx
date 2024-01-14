@@ -61,8 +61,7 @@ export function PortableTextCodeBlock({
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <button
-                      type="button"
+                    <div
                       className="text-zinc-400 hover:text-zinc-500 dark:text-zinc-500 dark:hover:text-zinc-400"
                       onClick={onClickCopy}
                     >
@@ -71,7 +70,7 @@ export function PortableTextCodeBlock({
                       ) : (
                         <ClipboardDataIcon className="h-5 w-5" />
                       )}
-                    </button>
+                    </div>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>Copy</p>
@@ -83,6 +82,7 @@ export function PortableTextCodeBlock({
         </div>
 
         <SyntaxHighlighter
+          key={resolvedTheme}
           language={value.language}
           style={resolvedTheme === "dark" ? oneDark : oneLight}
           showLineNumbers
