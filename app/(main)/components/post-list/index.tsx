@@ -1,8 +1,7 @@
 import { getLatestBlogPosts } from "@/sanity/queries/post-list";
 import { Post } from "@/sanity/schemas/post";
-import { cn } from "@/utils/cn";
 import dayjs from "dayjs";
-import Link from "next/link";
+import List from "./list";
 
 async function PostList(props: { className?: string }) {
   const { className } = props;
@@ -29,35 +28,7 @@ async function PostList(props: { className?: string }) {
   });
 
   // Render the sorted posts by year
-  return (
-    <div className={cn(className)}>
-      {Object.entries(postsByYear).map(([year, posts]) => (
-        <div key={year}>
-          <h2 className="mb-2 text-3xl font-bold">{year}</h2>
-          <ul>
-            {posts.map((post) => (
-              <PostItem key={post.slug} post={post} />
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
+  return <List postsByYear={postsByYear} />;
 }
-
-const PostItem = ({ post }: { post: Post }) => {
-  const { title, slug, createdAt } = post;
-
-  return (
-    <li>
-      <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-200">
-        <Link href={`/blog/${slug}`}>{title}</Link>
-      </h3>
-      <span className="text-sm text-slate-500 dark:text-slate-300">
-        {dayjs(createdAt).format("MMMM D")}
-      </span>
-    </li>
-  );
-};
 
 export default PostList;

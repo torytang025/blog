@@ -16,24 +16,22 @@ export default function Avatar({
   ...props
 }: AvatarProps) {
   return (
-    <div>
-      <Link
-        aria-label="主页"
-        className={cn(className, "pointer-events-auto")}
-        href={href ?? "/"}
-        {...props}
-      >
-        <Image
-          src={portraitImage}
-          alt="TT"
-          sizes={large ? "4rem" : "2.25rem"}
-          className={cn(
-            "rounded-full bg-zinc-100 object-cover dark:bg-zinc-800",
-            large ? "h-16 w-16" : "h-9 w-9"
-          )}
-          priority
-        />
-      </Link>
-    </div>
+    <Link
+      aria-label="主页"
+      className={cn(className, "pointer-events-auto")}
+      href={href ?? "/"}
+      {...props}
+    >
+      <Image
+        src={portraitImage}
+        alt="TT"
+        sizes={large ? "4rem" : "2.25rem"}
+        className={cn(
+          "rounded-full bg-neutral-100 object-cover dark:bg-neutral-800",
+          large ? "h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20" : "h-9 w-9"
+        )}
+        priority
+      />
+    </Link>
   );
 }
