@@ -107,7 +107,7 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
       initial="hidden"
       animate="visible"
       variants={listVariants}
-      className="group pointer-events-auto flex flex-col space-y-2 text-zinc-500"
+      className="group pointer-events-auto flex flex-col space-y-2 text-zinc-400"
     >
       {outline.map((node) => (
         <motion.li
@@ -119,9 +119,11 @@ export function BlogPostTableOfContents({ headings }: { headings: Node[] }) {
             node.style === "h4" && "ml-2",
             node.id === highlightedHeadingId
               ? "text-zinc-900 dark:text-zinc-200"
-              : "hover:text-zinc-700 dark:hover:text-zinc-400 group-hover:[&:not(:hover)]:text-zinc-400 dark:group-hover:[&:not(:hover)]:text-zinc-600"
+              : "hover:text-zinc-700 dark:hover:text-zinc-400 group-hover:[&:not(:hover)]:text-zinc-300 dark:group-hover:[&:not(:hover)]:text-zinc-600"
           )}
-          aria-label={node.id === highlightedHeadingId ? "当前位置" : undefined}
+          aria-label={
+            node.id === highlightedHeadingId ? "current anchor" : undefined
+          }
         >
           <a href={`#${node.id}`} className="block w-full">
             {node.text}

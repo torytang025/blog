@@ -54,6 +54,7 @@ export default async function BlogPage({
   params: { slug: string };
 }) {
   const post = await getBlogPost(params.slug);
+
   if (!post) {
     notFound();
   }
@@ -103,22 +104,25 @@ export default async function BlogPage({
     //   // relatedViews={relatedViews}
     //   // reactions={reactions.length > 0 ? reactions : undefined}
     // />
-    <Container className="mt-24">
-      <aside className="hidden w-[160px] shrink-0 lg:block">
-        <div className="sticky top-2 pt-20">
-          <BlogPostTableOfContents headings={post.headings} />
-        </div>
-      </aside>
-      <article className="prose dark:prose-invert">
-        <header>
-          <h1>
-            <Balancer>{post.title}</Balancer>
-          </h1>
-        </header>
-        <section>
-          <PostPortableText value={post.body} />
-        </section>
-      </article>
+    <Container className="mt-12 lg:mt-16">
+      <div className="w-full md:flex md:justify-center lg:relative">
+        <aside className="hidden w-1/6 shrink-0 lg:block">
+          <div className="sticky top-2 pt-20">
+            <BlogPostTableOfContents headings={post.headings} />
+          </div>
+        </aside>
+        <article className="prose dark:prose-invert" data-postid={post._id}>
+          <header>
+            <h1>
+              <Balancer>{post.title}</Balancer>
+            </h1>
+          </header>
+          <section>
+            <PostPortableText value={post.body} />
+          </section>
+        </article>
+      </div>
+      <div className="mt-12 lg:mt-16" />
     </Container>
   );
 }

@@ -30,8 +30,8 @@ function NavItem({
         className={cn(
           "relative block whitespace-nowrap px-3 py-2 transition",
           isActive
-            ? "text-sky-600 dark:text-sky-400"
-            : "hover:text-sky-600 dark:hover:text-sky-400"
+            ? "text-sky-600 dark:text-sky-500"
+            : "hover:text-sky-600 dark:hover:text-sky-600"
         )}
       >
         {children}

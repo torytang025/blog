@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import Avatar from "@/components/avartar";
-import { SocialLink } from "@/components/social-link";
+import { SocialLink } from "@/components/link/social-link";
 
 export default function Profile() {
   return (
