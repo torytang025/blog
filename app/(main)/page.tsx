@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+
 import PostList from "./components/post-list";
 import Profile from "./components/profile";
 

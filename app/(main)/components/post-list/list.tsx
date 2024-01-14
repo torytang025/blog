@@ -1,10 +1,11 @@
 "use client";
 
-import { Post } from "@/sanity/schemas/post";
-import { cn } from "@/utils/cn";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+import { Post } from "@/sanity/schemas/post";
+import { cn } from "@/utils/cn";
 
 export default function List(props: {
   className?: string;

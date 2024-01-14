@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Link, { type LinkProps } from "next/link";
 import React from "react";
 
@@ -11,9 +12,8 @@ import {
   XIcon,
   YouTubeIcon,
 } from "@/components/icon";
-
 import { IconProps } from "@/types/icon";
-import { AnimatePresence } from "framer-motion";
+
 import {
   Tooltip,
   TooltipContent,

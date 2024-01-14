@@ -1,7 +1,8 @@
-import portraitImage from "@/public/img/portrait.jpg";
-import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link, { type LinkProps } from "next/link";
+
+import portraitImage from "@/public/img/portrait.jpg";
+import { cn } from "@/utils/cn";
 
 type AvatarProps = Omit<LinkProps, "href"> & {
   large?: boolean;

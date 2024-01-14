@@ -1,6 +1,8 @@
+import dayjs from "dayjs";
+
 import { getLatestBlogPosts } from "@/sanity/queries/post-list";
 import { Post } from "@/sanity/schemas/post";
-import dayjs from "dayjs";
+
 import List from "./list";
 
 async function PostList(props: { className?: string }) {

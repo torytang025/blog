@@ -1,9 +1,10 @@
 "use client";
 
-import Avatar from "@/components/avartar";
-import { SocialLink } from "@/components/social-link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
+import Avatar from "@/components/avartar";
+import { SocialLink } from "@/components/social-link";
 
 export default function Profile() {
   return (
@@ -46,7 +47,7 @@ export default function Profile() {
           }}
         >
           <span className="flex items-center md:justify-end">
-            <span>I'm a </span>
+            <span>I&apos;m a </span>
             <Dev />
           </span>
           <span className="flex items-center md:justify-end">
