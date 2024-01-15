@@ -110,5 +110,9 @@ export default defineType({
         withFilename: true,
       },
     }),
+
+    defineArrayMember({
+      type: "youtube",
+    }),
   ],
 });
