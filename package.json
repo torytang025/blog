@@ -23,6 +23,8 @@
     "@sanity/image-url": "1",
     "@sanity/ui": "^1.9.3",
     "@sanity/vision": "3",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/edge-config": "^0.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",

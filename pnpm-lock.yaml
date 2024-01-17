@@ -35,6 +35,12 @@ dependencies:
   "@sanity/vision":
     specifier: "3"
     version: 3.23.4(@babel/runtime@7.23.7)(@codemirror/lint@6.4.2)(@codemirror/state@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.0)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.6)
+  "@vercel/analytics":
+    specifier: ^1.1.1
+    version: 1.1.1
+  "@vercel/edge-config":
+    specifier: ^0.4.1
+    version: 0.4.1
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -4005,6 +4011,32 @@ packages:
         integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==,
       }
     dev: true
+
+  /@vercel/analytics@1.1.1:
+    resolution:
+      {
+        integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==,
+      }
+    dependencies:
+      server-only: 0.0.1
+    dev: false
+
+  /@vercel/edge-config-fs@0.1.0:
+    resolution:
+      {
+        integrity: sha512-NRIBwfcS0bUoUbRWlNGetqjvLSwgYH/BqKqDN7vK1g32p7dN96k0712COgaz6VFizAm9b0g6IG6hR6+hc0KCPg==,
+      }
+    dev: false
+
+  /@vercel/edge-config@0.4.1:
+    resolution:
+      {
+        integrity: sha512-4Mc3H7lE+x4RrL17nY8CWeEorvJHbkNbQTy9p8H1tO7y11WeKj5xeZSr07wNgfWInKXDUwj5FZ3qd/jIzjPxug==,
+      }
+    engines: { node: ">=14.6" }
+    dependencies:
+      "@vercel/edge-config-fs": 0.1.0
+    dev: false
 
   /@vercel/stega@0.1.0:
     resolution:
@@ -10348,6 +10380,13 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+
+  /server-only@0.0.1:
+    resolution:
+      {
+        integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==,
+      }
+    dev: false
 
   /set-function-length@1.1.1:
     resolution:
