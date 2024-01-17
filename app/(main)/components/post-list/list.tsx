@@ -10,13 +10,14 @@ import { cn } from "@/utils/cn";
 export default function List(props: {
   className?: string;
   postsByYear: { [year: string]: Post[] };
+  animationDirection: "x" | "y";
 }) {
-  const { className, postsByYear } = props;
+  const { className, postsByYear, animationDirection } = props;
   return (
     <motion.div
       className={cn(className)}
-      initial={{ opacity: 0, x: 45 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, [animationDirection]: 45 }}
+      animate={{ opacity: 1, [animationDirection]: 0 }}
       transition={{
         type: "spring",
         damping: 30,

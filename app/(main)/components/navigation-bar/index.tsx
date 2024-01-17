@@ -11,7 +11,7 @@ import { cn } from "@/utils";
 const navigationItems = [
   { href: "/", text: "Home" },
   { href: "/blog", text: "Blog" },
-  { href: "/about", text: "About" },
+  // { href: "/about", text: "About" },
 ];
 
 function NavItem({

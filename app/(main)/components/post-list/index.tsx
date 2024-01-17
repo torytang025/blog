@@ -2,11 +2,15 @@ import dayjs from "dayjs";
 
 import { getLatestBlogPosts } from "@/sanity/queries/post-list";
 import { Post } from "@/sanity/schemas/post";
+import { cn } from "@/utils";
 
 import List from "./list";
 
-async function PostList(props: { className?: string }) {
-  const { className } = props;
+async function PostList(props: {
+  className?: string;
+  animationDirection?: "x" | "y";
+}) {
+  const { className, animationDirection = "x" } = props;
   const posts: Post[] =
     (await getLatestBlogPosts({
       limit: 10,
@@ -30,7 +34,13 @@ async function PostList(props: { className?: string }) {
   });
 
   // Render the sorted posts by year
-  return <List postsByYear={postsByYear} />;
+  return (
+    <List
+      postsByYear={postsByYear}
+      className={cn(className)}
+      animationDirection={animationDirection}
+    />
+  );
 }
 
 export default PostList;

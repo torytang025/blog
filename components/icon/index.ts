@@ -1,6 +1,7 @@
 export { BilibiliIcon } from "./bilibili";
 export { ClipboardCheckIcon } from "./clipboard-check";
 export { ClipboardDataIcon } from "./clipboard-data";
+export { ExternalLinkIcon } from "./external-link";
 export { GitHubIcon } from "./github";
 export { LightningIcon } from "./lightning";
 export { MailIcon } from "./mail";
