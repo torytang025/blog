@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import GridBackground from "@/components/ui/gird-background";
 
-import Header from "./components/header";
+import Header from "./_components/header";
 
 export default function IndexLayout({
   children,

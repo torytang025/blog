@@ -5,8 +5,8 @@ import Balancer from "react-wrap-balancer";
 import { Container } from "@/components/container";
 import { getBlogPost } from "@/sanity/queries/post";
 
-import { PostPortableText } from "../../components/portable-text/post-portable-text";
-import { BlogPostTableOfContents } from "../../components/table-of-content";
+import { PostPortableText } from "../../_components/portable-text/post-portable-text";
+import { BlogPostTableOfContents } from "../../_components/table-of-content";
 
 export const generateMetadata = async ({
   params,

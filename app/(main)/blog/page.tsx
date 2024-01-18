@@ -1,6 +1,6 @@
 import { Container } from "@/components/container";
 
-import PostList from "../components/post-list";
+import PostList from "../_components/post-list";
 
 export default function Blog() {
   return (
