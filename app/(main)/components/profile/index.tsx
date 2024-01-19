@@ -255,27 +255,27 @@ const Social = () => {
     <motion.div className="flex gap-3">
       <SocialLink
         href="https://torytang.com/x"
-        aria-label="我的推特"
+        aria-label="My Twitter"
         platform="x"
       />
       <SocialLink
         href="https://torytang.com/youtube"
-        aria-label="我的 YouTube"
+        aria-label="My YouTube"
         platform="youtube"
       />
       <SocialLink
         href="https://torytang.com/bilibili"
-        aria-label="我的 Bilibili"
+        aria-label="My Bilibili"
         platform="bilibili"
       />
       <SocialLink
         href="https://torytang.com/github"
-        aria-label="我的 GitHub"
+        aria-label="My GitHub"
         platform="github"
       />
       <SocialLink
         href="mailto:torytang.025@gmail.com"
-        aria-label="我的邮箱"
+        aria-label="My Email"
         platform="mail"
       />
     </motion.div>

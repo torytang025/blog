@@ -1,7 +1,7 @@
 import { Container } from "@/components/container";
 
-import PostList from "./_components/post-list";
-import Profile from "./_components/profile";
+import PostList from "./components/post-list";
+import Profile from "./components/profile";
 
 export default function IndexPage() {
   return (

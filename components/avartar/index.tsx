@@ -18,7 +18,7 @@ export default function Avatar({
 }: AvatarProps) {
   return (
     <Link
-      aria-label="主页"
+      aria-label="Home"
       className={cn(className, "pointer-events-auto")}
       href={href ?? "/"}
       {...props}

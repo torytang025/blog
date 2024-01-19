@@ -1,3 +1,4 @@
+export { Bar3Icon } from "./bar-3";
 export { BilibiliIcon } from "./bilibili";
 export { ClipboardCheckIcon } from "./clipboard-check";
 export { ClipboardDataIcon } from "./clipboard-data";

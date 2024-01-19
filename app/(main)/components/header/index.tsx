@@ -98,7 +98,7 @@ export default function Header() {
             }}
           >
             <div className="relative flex gap-4">
-              {!isHomePage ? <Avatar /> : <div />}
+              {!isHomePage ? <Avatar /> : <div className="w-9" />}
               <motion.div
                 className="flex flex-1 justify-end md:justify-center"
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}

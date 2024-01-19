@@ -15,7 +15,7 @@ import {
 } from "../ui/hover-card";
 import { RichLink } from "./rich-link";
 
-// 改成 false 就可以关闭链接预览快照图了
+// change to true to enable link preview
 const supportsPreview = false;
 
 type PeekabooLinkProps = LinkProps &
@@ -103,7 +103,7 @@ export function PeekabooLink({
             >
               <Image
                 src={`/api/link-preview?url=${href}`}
-                alt={`${href} 的预览图`}
+                alt={`${href}'s preview`}
                 className="pointer-events-none absolute left-0 top-0 h-full w-full rounded-xl object-cover"
                 placeholder="blur"
                 blurDataURL={makeBlurDataURL(16, 16)}

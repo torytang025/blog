@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import { Bar3Icon } from "@/components/icon";
 import { cn } from "@/utils";
 
 const navigationItems = [
@@ -114,22 +115,8 @@ function MobileNavItem({
 export function NavigationBarMobile(props: PopoverProps<"div">) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-gradient-to-b from-zinc-50/20 to-white/80 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-md focus:outline-none focus-visible:ring-2 dark:from-zinc-900/30 dark:to-zinc-800/80 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 dark:focus-visible:ring-yellow-500/80">
-        前往
-        {/* Chevron */}
-        <svg
-          viewBox="0 0 8 6"
-          aria-hidden="true"
-          className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
-        >
-          <path
-            d="M1.75 1.75 4 4.25l2.25-2.5"
-            fill="none"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+      <Popover.Button className="group flex items-center rounded-full bg-gradient-to-b from-zinc-50/20 to-white/80 px-2 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-md focus:outline-none focus-visible:ring-2 dark:from-zinc-900/30 dark:to-zinc-800/80 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 dark:focus-visible:ring-yellow-500/80">
+        <Bar3Icon className="h-6 w-6" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -157,7 +144,7 @@ export function NavigationBarMobile(props: PopoverProps<"div">) {
             className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-gradient-to-b from-zinc-100/75 to-white p-8 ring-1 ring-zinc-900/5 dark:from-zinc-900/50 dark:to-zinc-900 dark:ring-zinc-800"
           >
             <div className="flex flex-row-reverse items-center justify-between">
-              <Popover.Button aria-label="关闭菜单" className="-m-1 p-1">
+              <Popover.Button aria-label="Close" className="-m-1 p-1">
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -174,7 +161,7 @@ export function NavigationBarMobile(props: PopoverProps<"div">) {
                 </svg>
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                站内导航
+                Menu
               </h2>
             </div>
             <nav className="mt-6">
