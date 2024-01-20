@@ -26,7 +26,7 @@ export default function Header() {
   const isInitial = React.useRef(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    const downDelay = 64;
+    const downDelay = 32;
     const upDelay = 64;
     const direction = current - scrollYProgress.getPrevious();
 
@@ -49,16 +49,21 @@ export default function Header() {
     }
     isInitial.current = false;
 
+    // when scrollY is less than downDelay, the header height is fixed
     if (isInitial.current || scrollY < downDelay) {
       setProperty("--header-height", `${downDelay + height}px`);
       setProperty("--header-mb", `${-downDelay}px`);
-    } else if (top + height < -upDelay) {
+    }
+    // when scrollY is greater than downDelay, the header should move with scrollY
+    else if (top === 0) {
+      setProperty("--header-height", `${scrollY + height}px`);
+      setProperty("--header-mb", `${-scrollY}px`);
+    }
+    // when scroll direction is down, the header should move with scrollY
+    else if (top + height < -upDelay) {
       const offset = Math.max(height, scrollY - upDelay);
       setProperty("--header-height", `${offset}px`);
       setProperty("--header-mb", `${height - offset}px`);
-    } else if (top === 0) {
-      setProperty("--header-height", `${scrollY + height}px`);
-      setProperty("--header-mb", `${-scrollY}px`);
     }
 
     if (top === 0 && direction < 0) {

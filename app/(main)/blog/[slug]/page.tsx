@@ -65,7 +65,7 @@ export default async function BlogPage({
   const { headings, _id, title, createdAt, categories, body, mainImage } = post;
 
   return (
-    <Container className="mt-12 lg:mt-16">
+    <Container className="mt-2 lg:mt-8">
       <div className="w-full md:flex md:justify-center lg:relative">
         <aside className="hidden w-1/6 shrink-0 lg:block">
           <div className="sticky top-2 pt-20">
