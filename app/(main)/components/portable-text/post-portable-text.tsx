@@ -1,7 +1,6 @@
 "use client";
 
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
-import YouTubePlayer from "react-player/youtube";
 
 import { PeekabooLink } from "@/components/link/peek-aboo-link";
 
@@ -16,6 +15,7 @@ import {
   PortableTextBlocksListItem,
   PortableTextBlocksNormal,
 } from "./post-portable-text-block";
+import { PortableTextYouTube } from "./post-portable-youtube";
 
 const components: Partial<PortableTextReactComponents> = {
   block: {
@@ -31,11 +31,7 @@ const components: Partial<PortableTextReactComponents> = {
     image: PortableTextImage,
     // tweet: PortableTextTweet,
     codeBlock: PortableTextCodeBlock,
-    youtube: (props) => {
-      const { value } = props;
-      const url = value.url;
-      return <YouTubePlayer url={url} />;
-    },
+    youtube: PortableTextYouTube,
   },
 
   marks: {
