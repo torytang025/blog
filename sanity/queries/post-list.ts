@@ -24,6 +24,7 @@ const getLatestBlogPostsQuery = ({
     "categories": categories[]->title,
     description,
     publishedAt,
+    createdAt,
     readingTime,
     mainImage {
       _ref,
