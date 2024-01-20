@@ -1,9 +1,9 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import GridBackground from "@/components/ui/gird-background";
 
 import Header from "./components/header";
-
 export default function IndexLayout({
   children,
 }: {
@@ -21,6 +21,7 @@ export default function IndexLayout({
       {children}
 
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
