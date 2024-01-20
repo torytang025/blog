@@ -8,12 +8,13 @@ import List from "./list";
 
 async function PostList(props: {
   className?: string;
+  limit?: number;
   animationDirection?: "x" | "y";
 }) {
-  const { className, animationDirection = "x" } = props;
+  const { className, limit = 5, animationDirection = "x" } = props;
   const posts: Post[] =
     (await getLatestBlogPosts({
-      limit: 10,
+      limit,
     })) || [];
 
   // Sort posts by year and month

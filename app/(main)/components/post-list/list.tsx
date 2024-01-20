@@ -3,6 +3,7 @@
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
 import { Post } from "@/sanity/schemas/post";
 import { cn } from "@/utils/cn";
@@ -29,7 +30,7 @@ export default function List(props: {
           <h2 className="mb-2 text-3xl font-bold">{year}</h2>
           <ul>
             {posts.map((post) => (
-              <PostItem key={post.slug} post={post} />
+              <PostItem key={post._id} post={post} />
             ))}
           </ul>
         </div>
@@ -44,7 +45,9 @@ const PostItem = ({ post }: { post: Post }) => {
   return (
     <li>
       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-200">
-        <Link href={`/blog/${slug}`}>{title}</Link>
+        <Link href={`/blog/${slug}`}>
+          <Balancer>{title}</Balancer>
+        </Link>
       </h3>
       <span className="text-sm text-neutral-500 dark:text-neutral-300">
         {dayjs(createdAt).format("MMMM D")}

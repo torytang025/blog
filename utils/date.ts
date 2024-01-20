@@ -5,6 +5,6 @@ import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export function getChinaDate(timezone = "Asia/Shanghai"): dayjs.Dayjs {
+export function getDate(timezone = "Asia/Shanghai"): dayjs.Dayjs {
   return dayjs().tz(timezone);
 }

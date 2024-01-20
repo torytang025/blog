@@ -17,6 +17,7 @@ export default function Profile() {
           damping: 30,
           stiffness: 200,
         }}
+        className="max-w-fit"
       >
         <Avatar large />
       </motion.div>

@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-import { getChinaDate } from "@/utils/date";
+import { getDate } from "@/utils/date";
 
 import { clientFetch } from "../lib/client";
 import type { Post } from "../schemas/post";
@@ -16,7 +16,7 @@ const getLatestBlogPostsQuery = ({
   forDisplay = true,
 }: GetBlogPostsOptions) =>
   groq`
-  *[_type == "post" && !(_id in path("drafts.**")) && publishedAt <= "${getChinaDate().toISOString()}"
+  *[_type == "post" && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
   && defined(slug.current)] | order(publishedAt desc)[0...${limit}] {
     _id,
     title,
