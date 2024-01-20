@@ -1,8 +1,11 @@
+import dayjs from "dayjs";
 import { type Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 
 import { Container } from "@/components/container";
+import { Badge } from "@/components/ui/badge";
 import { getBlogPost } from "@/sanity/queries/post";
 
 import { PostPortableText } from "../../components/portable-text/post-portable-text";
@@ -59,66 +62,51 @@ export default async function BlogPage({
     notFound();
   }
 
-  // let views: number;
-  // if (env.VERCEL_ENV === "production") {
-  //   views = await redis.incr(kvKeys.postViews(post._id));
-  // } else {
-  //   views = 30578;
-  // }
-
-  // let reactions: number[] = [];
-  // try {
-  //   if (env.VERCEL_ENV === "production") {
-  //     const res = await fetch(url(`/api/reactions?id=${post._id}`), {
-  //       next: {
-  //         tags: [`reactions:${post._id}`],
-  //       },
-  //     });
-  //     const data = await res.json();
-  //     if (Array.isArray(data)) {
-  //       reactions = data;
-  //     }
-  //   } else {
-  //     reactions = Array.from({ length: 4 }, () =>
-  //       Math.floor(Math.random() * 50000)
-  //     );
-  //   }
-  // } catch (error) {
-  //   console.error(error);
-  // }
-
-  // let relatedViews: number[] = [];
-  // if (typeof post.related !== "undefined" && post.related.length > 0) {
-  //   if (env.VERCEL_ENV === "development") {
-  //     relatedViews = post.related.map(() => Math.floor(Math.random() * 1000));
-  //   } else {
-  //     const postIdKeys = post.related.map(({ _id }) => kvKeys.postViews(_id));
-  //     relatedViews = await redis.mget<number[]>(...postIdKeys);
-  //   }
-  // }
+  const { headings, _id, title, createdAt, categories, body, mainImage } = post;
 
   return (
-    // <BlogPostPage
-    //   post={post}
-    //   // views={views}
-    //   // relatedViews={relatedViews}
-    //   // reactions={reactions.length > 0 ? reactions : undefined}
-    // />
     <Container className="mt-12 lg:mt-16">
       <div className="w-full md:flex md:justify-center lg:relative">
         <aside className="hidden w-1/6 shrink-0 lg:block">
           <div className="sticky top-2 pt-20">
-            <BlogPostTableOfContents headings={post.headings} />
+            <BlogPostTableOfContents headings={headings} />
           </div>
         </aside>
-        <article className="prose dark:prose-invert" data-postid={post._id}>
+        <article className="prose dark:prose-invert" data-postid={_id}>
           <header>
+            <div className="mb-12">
+              <div className="relative aspect-[240/135] w-full">
+                <Image
+                  src={mainImage.asset.url}
+                  alt={title}
+                  className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
+                  placeholder="blur"
+                  blurDataURL={mainImage.asset.lqip}
+                  unoptimized
+                  fill
+                />
+              </div>
+            </div>
             <h1>
-              <Balancer>{post.title}</Balancer>
+              <Balancer>{title}</Balancer>
+              <div className="mt-2 flex items-center gap-x-2">
+                <span className="text-sm text-neutral-500 dark:text-neutral-300">
+                  {dayjs(createdAt).format("MMMM D")}
+                </span>
+                {categories?.length && (
+                  <>
+                    {categories.map((category, ind) => (
+                      <Badge key={category + ind} variant="secondary">
+                        {"# " + category}
+                      </Badge>
+                    ))}
+                  </>
+                )}
+              </div>
             </h1>
           </header>
           <section>
-            <PostPortableText value={post.body} />
+            <PostPortableText value={body} />
           </section>
         </article>
       </div>

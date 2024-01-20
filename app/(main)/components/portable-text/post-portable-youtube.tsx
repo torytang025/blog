@@ -1,5 +1,8 @@
 import { PortableTextComponentProps } from "@portabletext/react";
-import YouTubePlayer from "react-player/youtube";
+import dynamic from "next/dynamic";
+
+// https://github.com/cookpete/react-player/issues/1474#issuecomment-1184645105
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 export function PortableTextYouTube(
   props: PortableTextComponentProps<{
@@ -10,7 +13,7 @@ export function PortableTextYouTube(
   const url = value.url;
   return (
     <div className="h-96">
-      <YouTubePlayer url={url} width="100%" height="100%" />
+      <ReactPlayer url={url} width="100%" height="100%" />
     </div>
   );
 }

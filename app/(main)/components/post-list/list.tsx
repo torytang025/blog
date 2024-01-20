@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
+import { Badge } from "@/components/ui/badge";
 import { Post } from "@/sanity/schemas/post";
 import { cn } from "@/utils/cn";
 
@@ -40,7 +41,7 @@ export default function List(props: {
 }
 
 const PostItem = ({ post }: { post: Post }) => {
-  const { title, slug, createdAt } = post;
+  const { title, slug, createdAt, categories } = post;
 
   return (
     <li>
@@ -49,9 +50,20 @@ const PostItem = ({ post }: { post: Post }) => {
           <Balancer>{title}</Balancer>
         </Link>
       </h3>
-      <span className="text-sm text-neutral-500 dark:text-neutral-300">
-        {dayjs(createdAt).format("MMMM D")}
-      </span>
+      <div className="flex items-center gap-x-2">
+        <span className="text-sm text-neutral-500 dark:text-neutral-300">
+          {dayjs(createdAt).format("MMMM D")}
+        </span>
+        {categories?.length && (
+          <>
+            {categories.map((category, ind) => (
+              <Badge key={category + ind} variant="secondary">
+                {"# " + category}
+              </Badge>
+            ))}
+          </>
+        )}
+      </div>
     </li>
   );
 };
