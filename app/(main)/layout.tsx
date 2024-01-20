@@ -1,9 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
 
 import GridBackground from "@/components/ui/gird-background";
 
 import Header from "./components/header";
+import IndexLoading from "./loading";
 export default function IndexLayout({
   children,
 }: {
@@ -18,7 +20,8 @@ export default function IndexLayout({
           <div className="w-full bg-neutral-50/90 ring-1 ring-neutral-100 dark:bg-neutral-900/80 dark:ring-neutral-400/20"></div>
         </div>
       </div>
-      {children}
+
+      <Suspense fallback={<IndexLoading />}>{children}</Suspense>
 
       <Analytics />
       <SpeedInsights />
