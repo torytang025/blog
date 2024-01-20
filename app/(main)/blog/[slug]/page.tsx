@@ -11,6 +11,8 @@ import { getBlogPost } from "@/sanity/queries/post";
 import { PostPortableText } from "../../components/portable-text/post-portable-text";
 import { BlogPostTableOfContents } from "../../components/table-of-content";
 
+export const revalidate = 60;
+
 export const generateMetadata = async ({
   params,
 }: {
@@ -114,5 +116,3 @@ export default async function BlogPage({
     </Container>
   );
 }
-
-export const revalidate = 60;
