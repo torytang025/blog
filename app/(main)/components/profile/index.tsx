@@ -255,22 +255,22 @@ const Social = () => {
   return (
     <motion.div className="flex gap-3">
       <SocialLink
-        href="https://torytang.com/x"
+        href="https://tory.cool/x"
         aria-label="My Twitter"
         platform="x"
       />
       <SocialLink
-        href="https://torytang.com/youtube"
+        href="https://tory.cool/youtube"
         aria-label="My YouTube"
         platform="youtube"
       />
       <SocialLink
-        href="https://torytang.com/bilibili"
+        href="https://tory.cool/bilibili"
         aria-label="My Bilibili"
         platform="bilibili"
       />
       <SocialLink
-        href="https://torytang.com/github"
+        href="https://tory.cool/github"
         aria-label="My GitHub"
         platform="github"
       />
