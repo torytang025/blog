@@ -8,16 +8,11 @@ import type { Post } from "../schemas/post";
 type GetBlogPostsOptions = {
   limit?: number;
   offset?: number;
-  forDisplay?: boolean;
 };
 
-const getLatestBlogPostsQuery = ({
-  limit = 5,
-  forDisplay = true,
-}: GetBlogPostsOptions) =>
-  groq`
+const getLatestBlogPostsQuery = groq`
   *[_type == "post" && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
-  && defined(slug.current)] | order(publishedAt desc)[0...${limit}] {
+  && defined(slug.current)] | order(publishedAt desc)[0+$offset...$limit] {
     _id,
     title,
     "slug": slug.current,
@@ -30,13 +25,13 @@ const getLatestBlogPostsQuery = ({
       _ref,
       asset->{
         url,
-        ${
-          forDisplay
-            ? '"lqip": metadata.lqip, "dominant": metadata.palette.dominant,'
-            : ""
-        }
+        "lqip": metadata.lqip,
+        "dominant": metadata.palette.dominant,
       }
     }
   }`;
 export const getLatestBlogPosts = (options: GetBlogPostsOptions) =>
-  clientFetch<Post[] | null>(getLatestBlogPostsQuery(options));
+  clientFetch<Post[] | null>(getLatestBlogPostsQuery, {
+    limit: options.limit || 5,
+    offset: options.offset || 0,
+  });
