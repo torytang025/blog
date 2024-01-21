@@ -27,9 +27,10 @@ export function PhotoDisplay(props: { photo: Photo }) {
                 src={url}
                 className="!m-0 h-80 w-full cursor-zoom-in gap-10 rounded-lg object-cover object-center !p-0"
                 alt={title || ""}
-                placeholder="blur"
+                placeholder={lqip ? "blur" : "empty"}
                 blurDataURL={lqip}
                 fill
+                priority
               />
             </CardItem>
           </CardBody>
