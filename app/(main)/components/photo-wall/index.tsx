@@ -25,7 +25,7 @@ export default async function PhotoWall(props: { className?: string }) {
           );
         })}
       </InfiniteMovingCards>
-      <div className="invisible mt-2 flex items-center justify-center group-hover:visible group-hover:animate-bounce">
+      <div className="invisible mt-2 hidden items-center justify-center group-hover:visible group-hover:animate-bounce sm:flex">
         <Link
           href="/photo"
           aria-label="Photo"

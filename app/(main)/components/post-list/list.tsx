@@ -60,7 +60,7 @@ const PostItem = ({ post }: { post: Post }) => {
               <Badge
                 key={category + ind}
                 variant="secondary"
-                className="text-neutral-600 dark:text-neutral-400"
+                className="px-1 font-normal text-neutral-600 dark:text-neutral-400"
               >
                 {"# " + category}
               </Badge>
