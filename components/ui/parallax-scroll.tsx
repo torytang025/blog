@@ -37,10 +37,7 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn(
-        "mt-16 w-full items-start overflow-y-auto pb-40",
-        className
-      )}
+      className={cn("w-full items-start overflow-y-auto pb-40", className)}
       ref={gridRef}
     >
       <div
@@ -120,7 +117,7 @@ function PhotoItem(props: { photo: Photo }) {
         </CardContainer>
       </DialogTrigger>
 
-      <DialogContent className="max-w-none overflow-hidden">
+      <DialogContent className="w-5/6 max-w-none overflow-hidden">
         <div>
           <div className="relative flex aspect-[3/2] items-center justify-center">
             <div className="relative flex aspect-[3/2] w-full max-w-7xl items-center">

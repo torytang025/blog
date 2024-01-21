@@ -13,7 +13,7 @@ export default async function PhotoPage() {
 
   return (
     <Container>
-      <ParallaxScroll photos={photos} />
+      <ParallaxScroll photos={photos} className="mt-8" />
     </Container>
   );
 }
