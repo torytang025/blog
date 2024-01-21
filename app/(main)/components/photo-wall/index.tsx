@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+import { ArrowRightCircle } from "@/components/icon/arrow-right-circle";
 import { PhotoDisplay } from "@/components/photo-display";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { getLatestPhotoList } from "@/sanity/queries/photo";
@@ -12,7 +15,7 @@ export default async function PhotoWall(props: { className?: string }) {
     })) || [];
 
   return (
-    <div className={cn(className)}>
+    <div className={cn("group", className)}>
       <InfiniteMovingCards speed="slow">
         {photos.map((p) => {
           return (
@@ -22,6 +25,16 @@ export default async function PhotoWall(props: { className?: string }) {
           );
         })}
       </InfiniteMovingCards>
+      <div className="invisible mt-2 flex items-center justify-center group-hover:visible group-hover:animate-bounce">
+        <Link
+          href="/photo"
+          aria-label="Photo"
+          className="inline-flex items-center justify-center gap-x-1 text-sm text-neutral-500"
+        >
+          <ArrowRightCircle className="h-5 w-5" />
+          View All
+        </Link>
+      </div>
     </div>
   );
 }
