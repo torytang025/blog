@@ -9,7 +9,7 @@ export const revalidate = 60;
 export default function IndexPage() {
   return (
     <>
-      <PhotoWall className="mt-12" />
+      <PhotoWall className="mt-6 md:mt-12" />
       <Container className="mt-8 md:mt-16">
         <div className="flex flex-col justify-center gap-y-12 md:flex-row md:gap-x-16">
           <div className="flex flex-1 justify-start md:justify-end">

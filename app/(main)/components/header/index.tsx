@@ -79,10 +79,7 @@ export default function Header() {
     <>
       <motion.header
         className={cn(
-          "pointer-events-none relative z-50 mb-[var(--header-mb,0px)] flex flex-col",
-          isHomePage
-            ? "h-[var(--header-height,180px)]"
-            : "h-[var(--header-height,64px)]"
+          "pointer-events-none relative z-50 mb-[var(--header-mb,0px)] flex h-[var(--header-height,64px)] flex-col"
         )}
         layout
         layoutRoot
