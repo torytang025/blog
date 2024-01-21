@@ -109,7 +109,6 @@ export function PeekabooLink({
                 blurDataURL={makeBlurDataURL(16, 16)}
                 width={400}
                 height={250}
-                unoptimized
               />
             </motion.div>
           </HoverCardContent>

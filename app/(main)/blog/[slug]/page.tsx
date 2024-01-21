@@ -84,7 +84,6 @@ export default async function BlogPage({
                   className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
                   placeholder="blur"
                   blurDataURL={mainImage.asset.lqip}
-                  unoptimized
                   fill
                 />
               </div>

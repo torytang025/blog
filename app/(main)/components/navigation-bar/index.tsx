@@ -12,6 +12,7 @@ import { cn } from "@/utils";
 const navigationItems = [
   { href: "/", text: "Home" },
   { href: "/blog", text: "Blog" },
+  { href: "/photo", text: "Photo" },
   // { href: "/about", text: "About" },
 ];
 

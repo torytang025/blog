@@ -23,8 +23,8 @@ const Post = z.object({
   description: z.string(),
   categories: z.array(z.string()).optional(),
   body: z.any(),
-  readingTime: z.number(),
-  mood: z.enum(["happy", "sad", "neutral"]),
+  // readingTime: z.number(),
+  // mood: z.enum(["happy", "sad", "neutral"]),
 });
 export type Post = z.infer<typeof Post>;
 export type PostDetail = Post & {

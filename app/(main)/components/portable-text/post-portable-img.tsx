@@ -61,7 +61,6 @@ export function PortableTextImage({
                     )}
                     alt={value.alt || ""}
                     fetchPriority="high"
-                    unoptimized
                   />
                 </Dialog.Trigger>
               </motion.div>
@@ -109,7 +108,6 @@ export function PortableTextImage({
                           blurDataURL={value.lqip}
                           className="mx-auto h-full overflow-hidden object-contain"
                           alt={value.alt || ""}
-                          unoptimized
                         />
                       </motion.div>
                     </div>

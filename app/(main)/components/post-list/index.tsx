@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { getLatestBlogPosts } from "@/sanity/queries/post-list";
+import { getLatestBlogPosts } from "@/sanity/queries/post";
 import { Post } from "@/sanity/schemas/post";
 import { cn } from "@/utils";
 

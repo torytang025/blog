@@ -4,6 +4,7 @@ import { get } from "@vercel/edge-config";
 const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
+    unoptimized: true,
   },
 
   async redirects() {
