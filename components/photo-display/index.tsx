@@ -37,7 +37,7 @@ export function PhotoDisplay(props: { photo: Photo }) {
         </CardContainer>
       </DialogTrigger>
 
-      <DialogContent className="w-5/6 max-w-none overflow-hidden">
+      <DialogContent className="w-5/6 max-w-6xl overflow-hidden">
         <div>
           <div className="relative flex aspect-[3/2] items-center justify-center">
             <div className="relative flex aspect-[3/2] w-full max-w-7xl items-center">

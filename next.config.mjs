@@ -7,6 +7,8 @@ const nextConfig = {
     unoptimized: true,
   },
 
+  reactStrictMode: false,
+
   async redirects() {
     try {
       return (await get("redirects")) ?? [];
