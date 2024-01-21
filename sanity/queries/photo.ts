@@ -32,7 +32,7 @@ type GetPhotoListOptions = {
 
 const getLatestPhotoListQuery = groq`
   *[_type == "photo" && !(_id in path("drafts.**")) && publishedAt <= "${getDate().toISOString()}"
-  && defined(slug.current)] | order(publishedAt desc)[0+$offset...$limit] {
+  && defined(slug.current)] | order(publishedAt desc)[$offset...$offset+$limit] {
     _id,
     title,
     "slug": slug.current,

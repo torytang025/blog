@@ -89,8 +89,6 @@ export function SocialLink({
   const info = getIconForPlatform(platform);
 
   if (!info) {
-    console.warn(`No icon found for ${href.toString()}`);
-
     return <Link href={href} {...props} />;
   }
 

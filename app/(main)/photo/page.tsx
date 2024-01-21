@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { ParallaxScroll } from "@/components/ui/parallax-scroll";
+import { ParallaxScroll } from "@/components/photo/parallax-scroll";
 import { getLatestPhotoList } from "@/sanity/queries/photo";
 import { Photo } from "@/sanity/schemas/photo";
 

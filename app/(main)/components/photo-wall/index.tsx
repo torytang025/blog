@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ArrowRightCircle } from "@/components/icon/arrow-right-circle";
-import { PhotoDisplay } from "@/components/photo-display";
+import { PhotoDisplay } from "@/components/photo/photo-display";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { getLatestPhotoList } from "@/sanity/queries/photo";
 import type { Photo } from "@/sanity/schemas/photo";
