@@ -8,7 +8,7 @@ import { SocialLink } from "@/components/link/social-link";
 
 export default function Profile() {
   return (
-    <div className="flex flex-col text-neutral-700 dark:text-neutral-200 md:items-end">
+    <div className="flex flex-col text-neutral-900 dark:text-neutral-200 md:items-end">
       <motion.div
         initial={{ opacity: 0, x: -45 }}
         animate={{ opacity: 1, x: 0 }}

@@ -45,7 +45,7 @@ const PostItem = ({ post }: { post: Post }) => {
 
   return (
     <li>
-      <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-200">
+      <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-200">
         <Link href={`/blog/${slug}`}>
           <Balancer>{title}</Balancer>
         </Link>
@@ -57,7 +57,11 @@ const PostItem = ({ post }: { post: Post }) => {
         {categories?.length && (
           <>
             {categories.map((category, ind) => (
-              <Badge key={category + ind} variant="secondary">
+              <Badge
+                key={category + ind}
+                variant="secondary"
+                className="text-neutral-600 dark:text-neutral-400"
+              >
                 {"# " + category}
               </Badge>
             ))}
