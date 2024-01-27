@@ -44,13 +44,13 @@ const PostItem = ({ post }: { post: Post }) => {
   const { title, slug, createdAt, categories } = post;
 
   return (
-    <li>
+    <li className="mb-4 sm:mb-6">
       <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-200">
         <Link href={`/blog/${slug}`}>
           <Balancer>{title}</Balancer>
         </Link>
       </h3>
-      <div className="flex items-center gap-x-2">
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <span className="text-sm text-neutral-500 dark:text-neutral-300">
           {dayjs(createdAt).format("MMMM D")}
         </span>
@@ -60,7 +60,7 @@ const PostItem = ({ post }: { post: Post }) => {
               <Badge
                 key={category + ind}
                 variant="secondary"
-                className="px-1 font-normal text-neutral-600 dark:text-neutral-400"
+                className="px-1 text-neutral-600 dark:text-neutral-400"
               >
                 {"# " + category}
               </Badge>

@@ -90,7 +90,7 @@ export default async function BlogPage({
             </div>
             <h1>
               <Balancer>{title}</Balancer>
-              <div className="mt-2 flex items-center gap-x-2">
+              <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
                 <span className="text-sm text-neutral-500 dark:text-neutral-300">
                   {dayjs(createdAt).format("MMMM D")}
                 </span>
