@@ -10,8 +10,14 @@ async function PostList(props: {
   className?: string;
   limit?: number;
   animationDirection?: "x" | "y";
+  type?: "text" | "card";
 }) {
-  const { className, limit = 5, animationDirection = "x" } = props;
+  const {
+    className,
+    limit = 5,
+    animationDirection = "x",
+    type = "text",
+  } = props;
   const posts: Post[] =
     (await getLatestBlogPosts({
       limit,
@@ -40,6 +46,7 @@ async function PostList(props: {
       postsByYear={postsByYear}
       className={cn(className)}
       animationDirection={animationDirection}
+      type={type}
     />
   );
 }
