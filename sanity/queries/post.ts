@@ -15,7 +15,6 @@ const getBlogPostQuery = groq`
     description,
     publishedAt,
     createdAt,
-    readingTime,
     mood,
     body[] {
       ...,
@@ -34,13 +33,12 @@ const getBlogPostQuery = groq`
         "lqip": metadata.lqip
       }
     },
-    "related": *[_type == "post" && slug.current != $slug && count(categories[@._ref in ^.^.categories[]._ref]) > 0] | order(publishedAt desc, _createdAt desc) [0..2] {
+    "related": *[_type == "post" && slug.current != $slug && count(categories[@._ref in ^.^.categories[]._ref]) > 1] | order(publishedAt desc, _createdAt desc) [0..2] {
       _id,
       title,
       "slug": slug.current,
       "categories": categories[]->title,
       publishedAt,
-      readingTime,
       mainImage {
         _ref,
         asset->{

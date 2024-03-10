@@ -5,10 +5,12 @@ import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 
 import { Container } from "@/components/container";
+import { PencilSwooshIcon } from "@/components/icon";
 import { Badge } from "@/components/ui/badge";
 import { getBlogPost } from "@/sanity/queries/post";
 
 import { PostPortableText } from "../../components/portable-text/post-portable-text";
+import { BlogPostCard } from "../../components/post-card";
 import { BlogPostTableOfContents } from "../../components/table-of-content";
 
 export const revalidate = 60;
@@ -64,7 +66,16 @@ export default async function BlogPage({
     notFound();
   }
 
-  const { headings, _id, title, createdAt, categories, body, mainImage } = post;
+  const {
+    headings,
+    _id,
+    title,
+    createdAt,
+    categories,
+    body,
+    mainImage,
+    related,
+  } = post;
 
   return (
     <Container className="mt-2 lg:mt-8">
@@ -111,6 +122,20 @@ export default async function BlogPage({
           </section>
         </article>
       </div>
+      {post.related && post.related.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="mb-6 flex items-center justify-center text-lg font-bold text-zinc-900 dark:text-zinc-100">
+            <PencilSwooshIcon className="h-5 w-5 flex-none" />
+            <span className="ml-2">Related Reads</span>
+          </h2>
+
+          <div className="mt-6 grid grid-cols-1 justify-center gap-6 md:grid-cols-[repeat(auto-fit,75%)] lg:grid-cols-[repeat(auto-fit,45%)] lg:gap-8">
+            {post.related.map((post) => (
+              <BlogPostCard post={post} key={post._id} />
+            ))}
+          </div>
+        </section>
+      ) : null}
       <div className="mt-12 lg:mt-16" />
     </Container>
   );

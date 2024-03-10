@@ -1,5 +1,6 @@
 export { Bar3Icon } from "./bar-3";
 export { BilibiliIcon } from "./bilibili";
+export { CalendarIcon } from "./calendar";
 export { ClipboardCheckIcon } from "./clipboard-check";
 export { ClipboardDataIcon } from "./clipboard-data";
 export { ExternalLinkIcon } from "./external-link";
@@ -7,6 +8,8 @@ export { GitHubIcon } from "./github";
 export { LightningIcon } from "./lightning";
 export { MailIcon } from "./mail";
 export { MoonIcon } from "./moon";
+export { PencilSwooshIcon } from "./pencil-swoosh";
 export { SunIcon } from "./sun";
+export { TagIcon } from "./tag";
 export { XIcon } from "./x";
 export { YouTubeIcon } from "./youtube";
