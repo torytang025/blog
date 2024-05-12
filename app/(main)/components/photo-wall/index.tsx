@@ -11,7 +11,7 @@ export default async function PhotoWall(props: { className?: string }) {
   const { className } = props;
   const photos: Photo[] =
     (await getLatestPhotoList({
-      limit: 12,
+      limit: 24,
     })) || [];
 
   return (

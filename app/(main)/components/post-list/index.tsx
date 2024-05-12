@@ -14,7 +14,7 @@ async function PostList(props: {
 }) {
   const {
     className,
-    limit = 5,
+    limit = 0,
     animationDirection = "x",
     type = "text",
   } = props;

@@ -81,6 +81,6 @@ const getLatestBlogPostsQuery = groq`
 
 export const getLatestBlogPosts = (options: GetBlogPostsOptions) =>
   clientFetch<Post[] | null>(getLatestBlogPostsQuery, {
-    limit: options.limit || 5,
+    limit: options.limit || 999,
     offset: options.offset || 0,
   });

@@ -54,7 +54,7 @@ const PostItem = ({ post, type }: { post: Post; type: "text" | "card" }) => {
   if (type === "text") {
     return (
       <li className="mb-4 sm:mb-6">
-        <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-200">
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
           <Link href={`/blog/${slug}`}>
             <Balancer>{title}</Balancer>
           </Link>
