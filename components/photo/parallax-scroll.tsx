@@ -34,6 +34,7 @@ export const ParallaxScroll = ({
   const bottom = useRef(null);
 
   useEffect(() => {
+    if (loading) return;
     if (bottom.current) {
       const observer = new IntersectionObserver((entries) => {
         if (isGotAll.current) {
@@ -50,7 +51,7 @@ export const ParallaxScroll = ({
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                limit: 6,
+                limit: 9,
                 offset: photosInner.length,
               }),
             });
