@@ -80,7 +80,7 @@ function Dev() {
   return (
     <motion.span className="flex cursor-pointer select-none items-center">
       <span className="font-mono">&lt;</span>
-      <span>Front-Ender</span>
+      <span>Front-End</span>
       <span className="font-mono">/&gt;</span>
       <motion.span
         className="font-extrabold text-sky-400  dark:text-sky-600"
