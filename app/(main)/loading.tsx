@@ -4,7 +4,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function IndexLoading() {
   return (
     <Container className="mt-24">
-      <div className="flex flex-col justify-center gap-y-12 md:flex-row md:gap-x-16">
+      <div className="flex items-center justify-center gap-4">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <Skeleton key={i} className="h-36 w-24 sm:h-64 sm:w-48" />
+        ))}
+      </div>
+      <div className="mt-16 flex flex-col justify-center gap-y-12 md:flex-row md:gap-x-16">
         <div className="flex flex-1 justify-start md:justify-end">
           <div className="flex flex-col gap-y-4 md:items-end">
             <Skeleton className="h-12 w-12 rounded-full md:h-24 md:w-24" />

@@ -26,8 +26,25 @@ export const RichLink = React.forwardRef<HTMLAnchorElement, RichLinkProps>(
     // if it's a relative link, use a fallback Link
     if (!href.startsWith("http")) {
       return (
-        <Link href={href} className={className} ref={ref} {...props}>
+        <Link
+          href={href}
+          className={cn(
+            "inline-flex place-items-baseline items-baseline gap-0.5 pr-0.5 text-[0.95em] leading-none",
+            className
+          )}
+          ref={ref}
+          target="_blank"
+          {...props}
+        >
           {children}
+          {href && (
+            <ExternalLinkIcon
+              width="0.95em"
+              height="0.95em"
+              className="inline-block translate-y-0.5"
+              aria-hidden="true"
+            />
+          )}
         </Link>
       );
     }
