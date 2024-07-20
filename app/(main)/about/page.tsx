@@ -93,7 +93,7 @@ export default async function PhotoPage() {
                   ByteDance - Global Payment
                 </div>
                 <div className="italic">
-                  Frontend Software Engineer, 2020 - Present
+                  Frontend Software Engineer, Jul 2022 - Present
                 </div>
               </section>
               <Separator className="my-2 w-10 bg-neutral-600" />
@@ -181,7 +181,7 @@ export default async function PhotoPage() {
                   ByteDance - Public Opinion System
                 </div>
                 <div className="italic">
-                  Frontend Software Engineer, Dec 2021 - Jul 2022
+                  Frontend Software Engineer, Dec 2020 - Jul 2022
                 </div>
               </section>
               <Separator className="my-2 w-10 bg-neutral-600" />
